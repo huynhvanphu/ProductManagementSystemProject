@@ -1,0 +1,47 @@
+﻿@page
+@model OOP_Project_20882069.Pages.SalesReceiptDetailsModel
+@{
+    ViewData["Title"] = "Chi tiết hoá đơn";
+}
+<h1 class="hightlight">Chi tiết hoá đơn</h1>
+<div class="row" style="height:100%">
+    <div class="col-sm-2">
+        <p><strong>Mã hoá đơn</strong></p>
+    </div>
+    <div class="col-sm-10">
+        <p>@Model.salesReceipt.Id</p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><strong>Ngày tạo</strong></p>
+    </div>
+    <div class="col-sm-10">
+        <p>@Model.salesReceipt.CreatedDate.ToString("dd-MM-yyyy")</p>
+    </div>
+    <div class="col-sm-12"><h3>Chi tiết sản phẩm bán</h3></div>
+    <div class="col-sm-12">
+        <table class="table table-bordered">
+            <tr class="bg-warning">
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+            </tr>
+            @{
+                int i = 1;
+                foreach (var inf in Model.salesReceipt.receiptDetailsList)
+                {
+                    var productName = (from p in Model.products
+                                       where p.Id == inf.ProductId
+                                       select p.Name).FirstOrDefault();
+                    <tr>
+                        <td>@i</td>
+                        <td>@productName</td>
+                        <td>@inf.Quantity</td>
+                    </tr>
+                    i++;
+                }
+            }
+        </table>
+        <a class="btn btn-primary" asp-page="SalesReceipt">Trở lại</a>
+    </div>
+</div>

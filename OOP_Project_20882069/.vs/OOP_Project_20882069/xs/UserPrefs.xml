@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{1A0CA6B6-20CD-4E0A-9781-A07B02D6F3C0}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/AddProduct.cshtml.cs">
+    <Files>
+      <File FileName="Pages/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Index.cshtml.cs" />
+      <File FileName="Pages/AddProduct.cshtml" />
+      <File FileName="Pages/EditProduct.cshtml" />
+      <File FileName="Pages/EditProduct.cshtml.cs" />
+      <File FileName="../Entities/Product.cs" Line="1" Column="1" />
+      <File FileName="../DAL/DAL_Product.cs" Line="1" Column="1" />
+      <File FileName="../BusinessServices/ProductService.cs" Line="1" Column="1" />
+      <File FileName="Pages/AddProduct.cshtml.cs" Line="38" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="OOP_Project_20882069" expanded="True">
+            <Node name="BusinessServices" expanded="True" />
+            <Node name="DAL" expanded="True" />
+            <Node name="Entities" expanded="True" />
+            <Node name="OOP_Project_20882069" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="AddInventoryReceipt.cshtml" expanded="True" />
+                <Node name="AddProduct.cshtml" expanded="True">
+                  <Node name="AddProduct.cshtml.cs" selected="True" />
+                </Node>
+                <Node name="AddSalesReceipt.cshtml" expanded="True" />
+                <Node name="EditProduct.cshtml" expanded="True" />
+                <Node name="Index.cshtml" expanded="True" />
+                <Node name="Statistics.cshtml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.OOP__Project__20882069 PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Entities/Entities.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,66 @@
+﻿@page
+@model OOP_Project_20882069.Pages.InventoryReceiptModel
+@{
+    ViewData["Title"] = "Hoá đơn nhập hàng";
+}
+<div class="addProduct">
+    <a style="color: #f7f8c8;cursor: pointer" asp-page="AddInventoryReceipt">+ Thêm hoá đơn nhập hàng</a>
+    <form method="post" asp-page-handler="Search">
+        <div class="input-group">
+            <div class="form-outline">
+                <input type="search" id="searchKey" name="searchKey" class="form-control" placeholder="Nhập mã hoá đơn" />
+            </div>
+            <button type="submit" class="btn btn-primary">Tìm</button>
+        </div>
+    </form>
+</div>
+<form class="form-inline mt-1" method="post" asp-page-handler="SortDate">
+    <div class="form-group">
+        <label for="fromDate">Từ ngày:</label>
+        <input type="date" name="fromDate" class="form-control">
+    </div>
+    <div class="form-group ml-3">
+        <label for="toDate">Đến ngày:</label>
+        <input type="date" name="toDate" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary"> Lọc</button>
+</form>
+
+@if (Model.inventoryReceipts.Count > 0)
+{
+    <h1 class="hightlight text-center">THÔNG TIN HOÁ ĐƠN NHẬP</h1>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr class="bg-warning">
+                <th>STT</th>
+                <th>Mã hoá đơn</th>
+                <th>Ngày tạo</th>
+                <th>Chi tiết</th>
+                <th></th>
+            </tr>
+            @{
+                int i = 1;
+                foreach (var inv in Model.inventoryReceipts)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@inv.Id</td>
+                        <td>@inv.CreatedDate.ToString("dd-MM-yyyy")</td>
+                        <td><a asp-page="InventoryReceiptDetails" asp-route-id="@inv.Id">Xem chi tiết</a></td>
+                        <td class="text-center">
+                            <a class="btn btn-primary mr-1" asp-page="EditInventoryReceipt" asp-route-id="@inv.Id" role="button">Sửa</a>
+                            <a class="btn btn-danger mr-1" asp-page="DeleteInventoryReceipt" asp-route-id="@inv.Id" role="button">Xoá</a>
+                        </td>
+                    </tr>
+                    i++;
+                }
+
+            }
+        </table>
+    </div>
+}
+else
+{
+    <p class="text-danger h5 mt-2 mb-2">Không tìm thấy thông tin hoá đơn</p>
+}
+<p class="text-danger h5 mt-2 mb-2">@Model.message</p>

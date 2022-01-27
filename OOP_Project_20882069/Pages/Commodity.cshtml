@@ -1,0 +1,94 @@
+﻿@page
+@model OOP_Project_20882069.Pages.CommodityModel
+@{
+    ViewData["Title"] = "Danh sách loại hàng";
+}
+<div class="addProduct">
+    <a data-target="#addCommodity" style="color: #f7f8c8;cursor: pointer" data-toggle="modal">+ Thêm loại hàng</a>
+
+    <!--Popup modal -->
+    <div class="modal fade" id="addCommodity" tabindex="-1" role="dialog" aria-labelledby="Add Commodity" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Nhập thông tin loại hàng mới</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" autocomplete="off">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="ComName">Tên loại hàng:</label>
+                            <input type="text" class="form-control" id="productName" placeholder="Nhập tên loại hàng" name="ComName" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Search modal -->
+    <form method="post" asp-page-handler="Search">
+        <div class="input-group">
+            <div class="form-outline">
+                <input type="search" id="searchKey" name="searchKey" class="form-control" placeholder="Nội dung tìm kiếm" />
+            </div>
+            <div class="form-outline">
+                <select class="form-control" id="searchAttribute" name="searchAttribute">
+                    <optgroup label="Tìm theo">
+                        <option value="ComId">Mã loại hàng</option>
+                        <option value="ComName" selected>Tên loại hàng</option>
+                    </optgroup>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Tìm</button>
+        </div>
+    </form>
+</div>
+<p class="text-danger h5 mt-2 mb-2">@TempData["message"]</p>
+
+<!--Data view modal -->
+@if (Model.commodities == null || Model.commodities.Count == 0)
+{
+    <p class="text-danger h5 mt-2 mb-2">Không tìm thấy loại hàng!</p>
+}
+else
+{
+    <h1 class="hightlight text-center">THÔNG TIN LOẠI HÀNG</h1>
+    <div class="container col-sm-8">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã loại hàng</th>
+                    <th>Tên loại hàng</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int i = 1;
+                    foreach (var comodity in Model.commodities)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td>@comodity.ComId</td>
+                            <td>@comodity.ComName</td>
+                            <td>
+                                <a class="btn btn-primary mr-1" asp-page="EditCommodity" asp-route-id="@comodity.ComId" role="button">Sửa</a>
+                                <a class="btn btn-danger" asp-page="DeleteCommodity" asp-route-id="@comodity.ComId" role="button">Xoá</a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+}
+

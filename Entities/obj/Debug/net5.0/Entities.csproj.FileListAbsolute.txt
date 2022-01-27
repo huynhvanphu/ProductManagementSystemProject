@@ -1,0 +1,12 @@
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/bin/Debug/net5.0/Entities.deps.json
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/bin/Debug/net5.0/Entities.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/bin/Debug/net5.0/ref/Entities.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/bin/Debug/net5.0/Entities.pdb
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.csproj.AssemblyReference.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.AssemblyInfoInputs.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.AssemblyInfo.cs
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.csproj.CoreCompileInputs.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/ref/Entities.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/Entities/obj/Debug/net5.0/Entities.pdb

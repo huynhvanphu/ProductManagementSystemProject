@@ -1,0 +1,53 @@
+﻿@page
+@model OOP_Project_20882069.Pages.AddProductModel
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+}
+@if (Model.commodities.Count == 0)
+{
+    <h1 class="text-center bg-danger text-white mt-8">Truy cập bị hạn chế</h1>
+}
+else
+{
+    <h1 class="text-center hightlight">Nhập thông tin sản phẩm mới</h1>
+    <div class="container">
+        <h2></h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="productName">Tên sản phẩm:</label>
+                <input type="text" class="form-control" id="productName" placeholder="Nhập tên sản phẩm" name="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Hạn sử dụng:</label>
+                <input type="date" class="form-control" id="expiryDate" name="ExpiryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturer">Công ty sản xuất:</label>
+                <input type="text" class="form-control" id="manufacturer" name="Manufacturer" placeholder="Nhập công ty sản xuất" required>
+            </div>
+            <div class="form-group">
+                <label for="yearOfProduction">Năm sản xuất:</label>
+                <input type="text" class="form-control" id="yearOfProduction" name="YearOfProduction" placeholder="Nhập năm sản xuất" required>
+            </div>
+            <div class="form-group">
+                <div class="form-outline">
+                    <label for="commodity">Loại hàng:</label>
+                    <select class="form-control" id="commodity" name="commodity">
+                        @foreach (var comm in Model.commodities)
+                        {
+                            <option value="@comm.ComId" selected>@comm.ComName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+            <a class="btn btn-danger" asp-page="Index">Huỷ</a>
+        </form>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.message))
+    {
+        <div class="alert alert-warning">
+            @Model.message
+        </div>
+    }
+}

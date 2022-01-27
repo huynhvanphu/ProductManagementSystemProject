@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@{ ViewData["Title"] = "Danh sách sản phẩm"; }
+<div class="addProduct">
+    @if (Model.comCount == 0) 
+    {
+<a data-toggle="modal" data-target="#denyAddProduct" style="color: #f7f8c8; cursor: pointer;">+ Thêm sản phẩm</a>
+                <div class="modal fade" id="denyAddProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Truy cập bị từ chối</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Không thể truy cập trang do chưa có <strong>loại hàng</strong> nào trong danh mục. Thêm loại hàng và quay lại sau.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a role="button" class="btn btn-primary" asp-page="Commodity">Đi đến thêm loại hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    }
+                            else
+                            {
+                <a asp-page="/AddProduct">+ Thêm sản phẩm</a>
+    }
+    <form method="post">
+        <div class="input-group">
+            <div class="form-outline">
+                <input type="search" id="searchKey" name="searchKey" class="form-control" placeholder="Nội dung tìm kiếm" />
+            </div>
+            <div class="form-outline">
+                <select class="form-control" id="searchAttribute" name="searchAttribute">
+                    <optgroup label="Tìm theo">
+                        <option value="Name" selected>Tên sản phẩm</option>
+                        <option value="Manufacturer">Công ty sản xuất</option>
+                        <option value="YearOfProduction">Năm sản xuất</option>
+                        <option value="Commodity">Loại hàng</option>
+                    </optgroup>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Tìm</button>
+        </div>
+    </form>
+</div>
+
+@if (Model.products.Count == 0 || Model.products == null)
+{
+<p class="text-danger h5 mt-2 mb-2">Không tìm thấy thông tin sản phẩm</p>
+}
+else
+{
+<h1 class="hightlight text-center">THÔNG TIN SẢN PHẨM</h1>
+                <table style="width:100%" class="table table-hover table-striped">
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hạn dùng</th>
+                        <th>Công ty sản xuất</th>
+                        <th>Năm sản xuất</th>
+                        <th>Loại hàng</th>
+                        <th></th>
+                    </tr>
+                    @{ int i = 1;
+                                        foreach (var product in Model.products)
+                                        {
+                                            var comName = (from com in Model.commodities where com.ComId == product.Commodity select com.ComName).FirstOrDefault();
+                        <tr>
+                            <td>@i</td>
+                            <td>@product.Name</td>
+                            <td>@product.ExpiryDate.ToString("dd-MM-yyyy")</td>
+                            <td>@product.Manufacturer</td>
+                            <td>@product.YearOfProduction</td>
+                            <td>@comName</td>
+                            <td>
+                                <a class="btn btn-primary mr-1" asp-page="EditProduct" asp-route-id="@product.Id" role="button">Sửa</a>
+                                <a class="btn btn-danger mr-1" asp-page="DeleteProduct" asp-route-id="@product.Id" role="button">Xoá</a>
+                            </td>
+                        </tr> i++;
+                                        }
+                        }
+                </table>
+}

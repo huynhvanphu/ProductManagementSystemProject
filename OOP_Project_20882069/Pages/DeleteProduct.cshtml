@@ -1,0 +1,40 @@
+﻿@page
+@model OOP_Project_20882069.Pages.DeleteProductModel
+@{
+    ViewData["Title"] = "Xoá sản phẩm";
+}
+
+<h1 class="text-center hightlight">Xoá sản phẩm</h1>
+
+@if (!string.IsNullOrEmpty(Model.message))
+{
+    <div class="alert alert-warning">
+        @Model.message
+    </div>
+}
+@if (Model.product != null)
+{
+    <h3>Bạn có chắc muốn xoá sản phẩm này?</h3>
+    <div>
+
+        <hr />
+        <div class="card bg-warning text-dark">
+            <div class="card-header">
+                <h4>Thông tin sản phẩm</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Tên sản phẩm: </strong>@Model.product.Name</li>
+                <li class="list-group-item"><strong>Hạn dùng: </strong>@Model.product.ExpiryDate.ToString("dd-MM-yyyy")</li>
+                <li class="list-group-item"><strong>Công ty sản xuất: </strong>@Model.product.Manufacturer</li>
+                <li class="list-group-item"><strong>Năm sản xuất: </strong>@Model.product.YearOfProduction</li>
+                <li class="list-group-item"><strong>Loại hàng: </strong>@Model.commodity.ComName</li>
+            </ul>
+        </div>
+
+        <form method="post" class="mt-3 mr-1">
+            <input type="hidden" asp-for="product.Id" />
+            <input type="submit" value="Xoá sản phẩm" class="btn btn-danger" />
+            <a class="btn btn-warning" role="button" asp-page="Index">Huỷ</a>
+        </form>
+    </div>
+}

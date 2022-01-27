@@ -1,0 +1,15 @@
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/DAL.deps.json
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/DAL.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/ref/DAL.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/DAL.pdb
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/Entities.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/bin/Release/net5.0/Entities.pdb
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.csproj.AssemblyReference.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.AssemblyInfoInputs.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.AssemblyInfo.cs
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.csproj.CoreCompileInputs.cache
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.csproj.CopyComplete
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/ref/DAL.dll
+/Volumes/Felix Huynh/Đồ án LT HĐT/20882069/DAL/obj/Release/net5.0/DAL.pdb

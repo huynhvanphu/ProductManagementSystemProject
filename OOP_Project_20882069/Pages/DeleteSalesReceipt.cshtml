@@ -1,0 +1,36 @@
+﻿@page
+@model OOP_Project_20882069.Pages.DeleteSalesReceiptModel
+@{
+    ViewData["Title"] = "Xoá hoá đơn nhập";
+}
+@if (Model.salesReceipt != null)
+{
+    <h1 class="text-center hightlight">Xoá hoá đơn bán</h1>
+
+    <h3>Bạn có chắc chắn muốn xoá hoá đơn này?</h3>
+    <div>
+
+        <hr />
+        <div class="card bg-warning text-dark">
+            <div class="card-header">
+                <h4>Thông tin loại hàng</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Mã hoá đơn: </strong>@Model.salesReceipt.Id</li>
+                <li class="list-group-item"><strong>Ngày tạo: </strong>@Model.salesReceipt.CreatedDate.ToString("dd-MM-yyyy")</li>
+            </ul>
+        </div>
+
+        <form method="post" class="mt-3 mr-1">
+            <input type="hidden" asp-for="salesReceipt.Id" />
+            <input type="submit" value="Xoá hoá đơn" class="btn btn-danger" />
+            <a class="btn btn-warning" role="button" asp-page="SalesReceipt">Huỷ</a>
+        </form>
+    </div>
+}
+@if (!string.IsNullOrEmpty(Model.message))
+{
+    <div class="alert alert-warning">
+        @Model.message
+    </div>
+}

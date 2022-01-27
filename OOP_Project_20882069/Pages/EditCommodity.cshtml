@@ -1,0 +1,33 @@
+﻿@page
+@model OOP_Project_20882069.Pages.EditCommodityModel
+@{
+    ViewData["Title"] = "Sửa loại hàng";
+}
+@if (Model.commodity != null)
+{
+    <h1 class="hightlight text-center">Sửa loại hàng</h1>
+    <div class="container">
+        <form class="form-horizontal" method="post">
+            <div class="form-group">
+                <label for="productName">Mã loại hàng:</label>
+                <input type="text" class="form-control" value="@Model.commodity.ComId" name="ComId" readonly>
+            </div>
+            <div class="form-group">
+                <label for="productName">Tên loại hàng:</label>
+                <input type="text" class="form-control" value="@Model.commodity.ComName" name="ComName" placeholder="Nhập tên loại hàng">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary mr-1">Lưu thông tin</button>
+                    <a class="btn btn-danger" role="button" asp-page="Commodity">Huỷ</a>
+                </div>
+            </div>
+        </form>
+    </div>
+}
+@if (!string.IsNullOrEmpty(Model.message))
+{
+    <div class="alert alert-warning">
+        @Model.message
+    </div>
+}
